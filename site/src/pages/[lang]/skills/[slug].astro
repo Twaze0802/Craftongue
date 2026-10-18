@@ -58,7 +58,7 @@ const l = {
     <p>{skill.summary[lang]}</p>
 
     <h2>{l.features}</h2>
-    <ul>{skill.features[lang].map((f) => <li>{f}</li>)}</ul>
+    <ul class="checks">{skill.features[lang].map((f) => <li>{f}</li>)}</ul>
 
     <h2>{l.modes}</h2>
     <p class="tags">{skill.modes.map((m) => <code>{m}</code>)}</p>
@@ -66,8 +66,8 @@ const l = {
 
   <h2>{l.example}</h2>
   <div class="compare">
-    <div class="card"><p class="label">{l.before}</p><p lang="zh-Hant-TW">{skill.example.before}</p></div>
-    <div class="card"><p class="label">{l.after}</p><p lang="zh-Hant-TW">{skill.example.after}</p></div>
+    <div class="card before"><p class="label">{l.before}</p><p lang="zh-Hant-TW">{skill.example.before}</p></div>
+    <div class="card after"><p class="label">{l.after}</p><p lang="zh-Hant-TW">{skill.example.after}</p></div>
   </div>
   <div class="prose">
     <h3>{l.changes}</h3>

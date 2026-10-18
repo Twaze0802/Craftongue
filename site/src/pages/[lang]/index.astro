@@ -11,6 +11,7 @@ const copy = {
   'zh-tw': {
     title: '首頁',
     description: '匠語 Craftongue 製作中英雙語的 AI 技能（Agent Skills），讓你的 AI 寫出道地的台灣中文、更會做特定工作。',
+    eyebrow: '中英雙語 AI 技能',
     heading: '讓 AI 更懂台灣、更會做事',
     lead: '匠語製作中英雙語的 AI 技能。裝進你平常用的 AI，它就能寫出自然的台灣中文，或更熟練地完成特定工作。',
     cta: '看技能目錄',
@@ -28,6 +29,7 @@ const copy = {
   en: {
     title: 'Home',
     description: 'Craftongue makes bilingual (English / Traditional Chinese) Agent Skills that help your AI write natural Taiwanese Chinese and do specific jobs well.',
+    eyebrow: 'Bilingual Agent Skills',
     heading: 'Skills that make your AI better at real work',
     lead: 'Craftongue makes bilingual Agent Skills. Add one to the AI you already use, and it writes natural Taiwanese Chinese or handles a specific job with more care.',
     cta: 'Browse skills',
@@ -46,6 +48,7 @@ const copy = {
 ---
 <Base lang={lang} title={copy.title} description={copy.description}>
   <section class="hero">
+    <span class="eyebrow">{copy.eyebrow}</span>
     <h1>{copy.heading}</h1>
     <p>{copy.lead}</p>
     <div class="btn-row">
@@ -70,7 +73,7 @@ const copy = {
     <h2>{copy.whyTitle}</h2>
     <div class="grid">
       {copy.why.map((item) => (
-        <div class="card"><h3>{item.h}</h3><p>{item.p}</p></div>
+        <div class="card feature-card"><h3>{item.h}</h3><p>{item.p}</p></div>
       ))}
     </div>
   </section>

@@ -6,10 +6,10 @@ interface Props { skill: Skill; lang: Lang }
 const { skill, lang } = Astro.props;
 const more = lang === 'zh-tw' ? '看介紹' : 'Learn more';
 ---
-<article class="card">
+<article class="card card-link">
   <p><span class="badge">{skill.line[lang]}</span><span class="badge">{skill.status[lang]} · v{skill.version}</span></p>
   <h3><a href={localizePath(lang, `skills/${skill.slug}/`)}>{skill.title[lang]}</a></h3>
   <p class="muted"><code>{skill.slug}</code></p>
   <p>{skill.summary[lang]}</p>
-  <p><a href={localizePath(lang, `skills/${skill.slug}/`)}>{more} →</a></p>
+  <p><a class="card-more" href={localizePath(lang, `skills/${skill.slug}/`)}>{more} →</a></p>
 </article>
