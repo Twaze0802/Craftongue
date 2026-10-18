@@ -12,6 +12,11 @@ Bilingual (English / Traditional Chinese) Agent Skills that help AI tools do spe
 Skills follow the open [Agent Skills](https://agentskills.io) format and work with Claude Code, claude.ai, Codex, Cursor and other compatible tools.
 技能採用開放的 Agent Skills 格式，可用於 Claude Code、claude.ai、Codex、Cursor 等工具。
 
+## Website / 網站
+
+The bilingual website lives in [`site/`](site/) (Astro). See [site/README.md](site/README.md).
+雙語網站在 [`site/`](site/)（Astro），說明見 [site/README.md](site/README.md)。
+
 ## Safety / 安全
 
 No hidden behavior, no network calls, no API keys required. Every script (if any) is documented.

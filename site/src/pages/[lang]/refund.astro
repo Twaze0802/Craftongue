@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sections from '../../components/Sections.astro';
+import { langPaths, type Lang } from '../../i18n/ui';
+import { site } from '../../data/site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+// 草稿：付費商品上架前要定稿，並確認台灣消保法對數位內容的規定。
+const copy = {
+  'zh-tw': {
+    title: '退款政策',
+    description: '匠語 Craftongue 付費商品的退款方式。',
+    updated: '最後更新：2026-10-18（草稿）',
+    sections: [
+      { h: '目前狀態', p: ['匠語目前還沒有販售付費商品，網站上的技能都可以免費使用。'] },
+      { h: '之後的安排', p: ['付費商品上架前，我們會在這裡公布完整的退款條件、申請方式和處理時間，並在購買頁面清楚標示。'] },
+    ],
+  },
+  en: {
+    title: 'Refund Policy',
+    description: 'How refunds work for Craftongue paid products.',
+    updated: 'Last updated: 2026-10-18 (draft)',
+    sections: [
+      { h: 'Current status', p: ['Craftongue does not sell any paid products yet. Every skill on this site is free.'] },
+      { h: 'What comes next', p: ['Before any paid product launches, we will publish the full refund conditions, how to request a refund, and processing times here, and show them clearly on the purchase page.'] },
+    ],
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description} draft={true}>
+  <h1>{copy.title}</h1>
+  {copy.updated && <p class="muted">{copy.updated}</p>}
+  <Sections sections={copy.sections} />
+</Base>

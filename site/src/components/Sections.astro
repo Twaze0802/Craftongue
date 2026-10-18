@@ -1,0 +1,13 @@
+---
+export interface Section { h: string; p: string[] }
+interface Props { sections: Section[] }
+const { sections } = Astro.props;
+---
+<div class="prose">
+  {sections.map((s) => (
+    <section>
+      <h2>{s.h}</h2>
+      {s.p.map((para) => <p set:html={para} />)}
+    </section>
+  ))}
+</div>

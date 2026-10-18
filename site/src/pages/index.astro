@@ -1,0 +1,24 @@
+---
+// 根目錄：依瀏覽器語言導向 /zh-tw/ 或 /en/，沒有 JavaScript 時預設繁中。
+const abs = (path: string) => new URL(path, Astro.site).href;
+---
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>匠語 Craftongue</title>
+    <link rel="canonical" href={abs('/zh-tw/')} />
+    <link rel="alternate" hreflang="zh-TW" href={abs('/zh-tw/')} />
+    <link rel="alternate" hreflang="en" href={abs('/en/')} />
+    <link rel="alternate" hreflang="x-default" href={abs('/zh-tw/')} />
+    <script is:inline>
+      var l = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+      location.replace(l && !/(^|,)zh/.test(l) ? '/en/' : '/zh-tw/');
+    </script>
+    <meta http-equiv="refresh" content="1; url=/zh-tw/" />
+  </head>
+  <body>
+    <p><a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a></p>
+  </body>
+</html>

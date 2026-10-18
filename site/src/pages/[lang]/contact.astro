@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sections from '../../components/Sections.astro';
+import { langPaths, type Lang } from '../../i18n/ui';
+import { site } from '../../data/site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const copy = {
+  'zh-tw': {
+    title: '聯絡我們',
+    description: '聯絡匠語 Craftongue：技能問題回報、合作洽詢。',
+    updated: '',
+    sections: [
+      { h: '技能問題回報', p: [`使用技能遇到問題或有建議，歡迎到 <a href="${site.repoUrl}/issues">GitHub Issues</a> 回報。回報時請附上你用的 AI 工具、輸入的文字和得到的結果（請先刪除個人資料）。`] },
+      { h: '合作與其他洽詢', p: ['聯絡信箱設定中，上線前會公布在這裡。'] },
+    ],
+  },
+  en: {
+    title: 'Contact',
+    description: 'Contact Craftongue for skill feedback or partnership inquiries.',
+    updated: '',
+    sections: [
+      { h: 'Skill feedback', p: [`Found a problem or have an idea? Please open an issue on <a href="${site.repoUrl}/issues">GitHub Issues</a>. Include the AI tool you used, your input, and the result you got (remove any personal information first).`] },
+      { h: 'Partnerships and other inquiries', p: ['Our contact email is being set up and will be listed here before launch.'] },
+    ],
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description} draft={false}>
+  <h1>{copy.title}</h1>
+  {copy.updated && <p class="muted">{copy.updated}</p>}
+  <Sections sections={copy.sections} />
+</Base>

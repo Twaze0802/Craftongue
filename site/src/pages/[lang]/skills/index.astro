@@ -1,0 +1,32 @@
+---
+import Base from '../../../layouts/Base.astro';
+import SkillCard from '../../../components/SkillCard.astro';
+import { langPaths, type Lang } from '../../../i18n/ui';
+import { skills } from '../../../data/skills';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+
+const copy = {
+  'zh-tw': {
+    title: '技能目錄',
+    description: '匠語所有的 AI 技能：繁中寫作、上班族工作流程、創客工具。',
+    lead: '目前上架的技能都可以免費使用。更多技能製作中。',
+    soon: '即將推出：上班族工作流程技能、創客（3D 列印、OpenSCAD）技能。',
+  },
+  en: {
+    title: 'Skills',
+    description: 'All Craftongue Agent Skills: Taiwanese Chinese writing, office workflows, and maker tools.',
+    lead: 'Every skill listed here is free to use. More are on the way.',
+    soon: 'Coming soon: office workflow skills and maker skills (3D printing, OpenSCAD).',
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description}>
+  <h1>{copy.title}</h1>
+  <p class="muted">{copy.lead}</p>
+  <div class="grid">
+    {skills.map((skill) => <SkillCard skill={skill} lang={lang} />)}
+  </div>
+  <p class="muted">{copy.soon}</p>
+</Base>

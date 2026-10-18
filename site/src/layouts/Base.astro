@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import { languages, langs, localizePath, switchLang, ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  draft?: boolean;
+}
+
+const { lang, title, description, draft = false } = Astro.props;
+const t = ui[lang];
+const pathname = Astro.url.pathname;
+const other = langs.find((l) => l !== lang)!;
+const fullTitle = pathname === localizePath(lang) ? `${t.brand} ${t.brandAlt}｜${t.tagline}` : `${title}｜${t.brand}`;
+const abs = (path: string) => new URL(path, Astro.site).href;
+
+const nav = [
+  { href: localizePath(lang), label: t.nav.home },
+  { href: localizePath(lang, 'skills/'), label: t.nav.skills },
+  { href: localizePath(lang, 'about/'), label: t.nav.about },
+  { href: localizePath(lang, 'contact/'), label: t.nav.contact },
+];
+const isCurrent = (href: string) =>
+  href === localizePath(lang) ? pathname === href : pathname.startsWith(href);
+---
+<!doctype html>
+<html lang={languages[lang].htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={abs(pathname)} />
+    {langs.map((l) => (
+      <link rel="alternate" hreflang={languages[l].hreflang} href={abs(switchLang(pathname, l))} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={abs(switchLang(pathname, 'zh-tw'))} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={abs(pathname)} />
+    <meta property="og:locale" content={lang === 'zh-tw' ? 'zh_TW' : 'en_US'} />
+    {draft && <meta name="robots" content="noindex" />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skipToContent}</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="header-row">
+          <a class="brand" href={localizePath(lang)}>{t.brand}<small>{t.brandAlt}</small></a>
+          <a
+            class="lang-switch"
+            href={switchLang(pathname, other)}
+            hreflang={languages[other].hreflang}
+            lang={languages[other].htmlLang}
+            aria-label={`${t.switchTo}: ${languages[other].label}`}
+          >{languages[other].label}</a>
+        </div>
+        <nav class="main-nav" aria-label={t.menu}>
+          <ul>
+            {nav.map((item) => (
+              <li><a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="container">
+      {draft && <p class="notice">{t.draftNotice}</p>}
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <strong>{t.footer.legal}</strong>
+        <ul>
+          <li><a href={localizePath(lang, 'privacy/')}>{t.footer.privacy}</a></li>
+          <li><a href={localizePath(lang, 'license/')}>{t.footer.license}</a></li>
+          <li><a href={localizePath(lang, 'refund/')}>{t.footer.refund}</a></li>
+        </ul>
+        <p>© {new Date().getFullYear()} {t.footer.rights}</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import SkillCard from '../../components/SkillCard.astro';
+import { langPaths, localizePath, type Lang } from '../../i18n/ui';
+import { skills } from '../../data/skills';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+
+const copy = {
+  'zh-tw': {
+    title: '首頁',
+    description: '匠語 Craftongue 製作中英雙語的 AI 技能（Agent Skills），讓你的 AI 寫出道地的台灣中文、更會做特定工作。',
+    heading: '讓 AI 更懂台灣、更會做事',
+    lead: '匠語製作中英雙語的 AI 技能。裝進你平常用的 AI，它就能寫出自然的台灣中文，或更熟練地完成特定工作。',
+    cta: '看技能目錄',
+    ctaAbout: '認識匠語',
+    whatTitle: '什麼是 AI 技能？',
+    what: 'AI 技能（Agent Skills）是一種開放格式：一個資料夾裡放著給 AI 的說明和範例。把它裝進 Claude Code、claude.ai、Codex、Cursor 等工具，AI 就會照著做。技能在你自己的 AI 上執行，不需要額外帳號或 API 金鑰。',
+    whyTitle: '為什麼選匠語',
+    why: [
+      { h: '雙語', p: '每個技能都有繁中和英文說明，指令同時支援兩種語言的輸入和輸出。' },
+      { h: '安全透明', p: '沒有隱藏行為、不把資料傳到外部。若有程式，每一個都會說明用途。' },
+      { h: '附使用前後對照', p: '每個技能都附實際範例，讓你先看效果再決定要不要用。' },
+    ],
+    featured: '目前的技能',
+  },
+  en: {
+    title: 'Home',
+    description: 'Craftongue makes bilingual (English / Traditional Chinese) Agent Skills that help your AI write natural Taiwanese Chinese and do specific jobs well.',
+    heading: 'Skills that make your AI better at real work',
+    lead: 'Craftongue makes bilingual Agent Skills. Add one to the AI you already use, and it writes natural Taiwanese Chinese or handles a specific job with more care.',
+    cta: 'Browse skills',
+    ctaAbout: 'About Craftongue',
+    whatTitle: 'What is an Agent Skill?',
+    what: 'Agent Skills is an open format: a folder of instructions and examples for your AI. Add it to Claude Code, claude.ai, Codex, Cursor, or another compatible tool, and the AI follows it. Skills run on your own AI, so there is no extra account or API key.',
+    whyTitle: 'Why Craftongue',
+    why: [
+      { h: 'Bilingual', p: 'Every skill ships with English and Traditional Chinese docs and handles input and output in both.' },
+      { h: 'Safe and transparent', p: 'No hidden behavior and no data sent elsewhere. Any script is documented.' },
+      { h: 'Before-and-after examples', p: 'Every skill includes real examples so you can see the result before you use it.' },
+    ],
+    featured: 'Available skills',
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description}>
+  <section class="hero">
+    <h1>{copy.heading}</h1>
+    <p>{copy.lead}</p>
+    <div class="btn-row">
+      <a class="btn" href={localizePath(lang, 'skills/')}>{copy.cta}</a>
+      <a class="btn secondary" href={localizePath(lang, 'about/')}>{copy.ctaAbout}</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>{copy.featured}</h2>
+    <div class="grid">
+      {skills.map((skill) => <SkillCard skill={skill} lang={lang} />)}
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2>{copy.whatTitle}</h2>
+    <p>{copy.what}</p>
+  </section>
+
+  <section>
+    <h2>{copy.whyTitle}</h2>
+    <div class="grid">
+      {copy.why.map((item) => (
+        <div class="card"><h3>{item.h}</h3><p>{item.p}</p></div>
+      ))}
+    </div>
+  </section>
+</Base>
