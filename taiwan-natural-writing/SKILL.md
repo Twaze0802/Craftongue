@@ -1,9 +1,9 @@
 ---
 name: taiwan-natural-writing
-description: Rewrites or localizes text into natural Taiwanese Traditional Chinese (zh-TW). Removes stiff "AI-sounding" phrasing, replaces Mainland China vocabulary with Taiwan usage, and applies Taiwan full-width punctuation, while keeping every fact unchanged. Use when the user asks to polish Chinese marketing copy, social posts, or business emails for Taiwanese readers, to convert Simplified or Mainland-style Chinese into Taiwan usage, or to localize English into zh-TW (or zh-TW into English for international readers).
+description: Rewrites, polishes, or translates text into natural Taiwanese Traditional Chinese (zh-TW), and zh-TW into natural English. Removes stiff "AI-sounding" phrasing, replaces Mainland China vocabulary with Taiwan usage, applies Taiwan punctuation, and never adds facts. Use this skill for ANY request to edit, rewrite, proofread, change the tone of, or translate Chinese text, even short or simple ones, including turning a casual message into a formal Taiwan business email, converting Simplified or Mainland wording to Taiwan usage, polishing marketing copy, social posts or slogans, and translating between English and Traditional Chinese for Taiwanese or international readers. Typical requests: 改成台灣用語, 改自然一點, 潤飾, 潤稿, 改成正式 email, 台灣商務語氣, 簡體轉繁體, 翻成繁中, 翻成英文給外國客戶.
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Taiwan Natural Writing
@@ -62,7 +62,7 @@ Prefer: concrete nouns and numbers already in the source, shorter sentences, act
 
 Do not blindly replace. Examples:
 
-- 質量: "quality" → 品質; but physics "mass" stays 質量.
+- 質量: "quality" → 品質; but physics "mass" stays 質量 (do not change it to 重量, even in casual text).
 - 信息: usually 資訊; a single message is 訊息.
 - 項目: "project" → 專案; "item/category" stays 項目.
 - 文件: "file" → 檔案; "document/paperwork" stays 文件.
@@ -70,7 +70,8 @@ Do not blindly replace. Examples:
 - 數據: Taiwan uses both; "data" in IT → 資料, "statistics/figures" can stay 數據.
 - 用戶: acceptable in Taiwan; prefer 使用者 in software UI, keep 用戶 for telecom/business customers.
 - 優化: widely used in Taiwan; keep it, or use 改善/最佳化 if it reads more naturally.
-- Brand names, quotes from other people, legal text, and product names keep their original wording even if they use Mainland terms. Mention them in notes instead.
+- Brand names, quotes from other people, legal text, and product names keep their original wording even if they use Mainland terms. Still convert Simplified characters to Traditional inside them (这个视频 → 這個視頻), and use a brand's official Taiwan name only if you are sure of it. Mention kept terms in notes.
+- Do not replace a generic term with a specific brand (公交卡 → 交通卡, not 悠遊卡).
 
 ## Fact-preservation rules (strict)
 
@@ -82,8 +83,9 @@ Do not blindly replace. Examples:
 ## Edge cases
 
 - **Mixed-language input** (Chinese with English terms): keep common English tech terms (App、AI、Email、Logo) if the source uses them; do not force-translate.
-- **Very short input** (under ~15 characters, e.g. a slogan): give 2–3 options instead of one.
-- **Input already natural**: say so, make only necessary fixes, and do not rewrite for the sake of change.
+- **Very short input** (under ~15 characters, e.g. a slogan): give 2–3 options instead of one. Every option must keep the original meaning; do not introduce new concepts, technologies, or claims (e.g. adding "AI" to a slogan that never mentions it).
+- **Input already natural**: say so in one line, make only necessary fixes (vocabulary, punctuation, clear errors), and do not rewrite for the sake of change. Do not suggest new content, invented details, or "more vivid" alternative sentences; this skill edits wording, it does not add to the story.
+- **Email greetings and sign-offs**: keep the source's opening and closing, even when making a casual message more formal. Do not add a subject line, a closing formula (e.g. 順頌商祺), a signature line, a reason (e.g. 因故), or any sentence that is not in the source. You may suggest a subject line or closing in the notes instead.
 - **Hong Kong Cantonese or written Cantonese**: say this skill targets Taiwan Mandarin and ask whether to convert.
 - **Requests to "avoid AI detection" or make homework look human-written**: this skill is a style and localization editor. Do not claim or promise that output will pass any AI detector, and do not frame your help as hiding AI use. You may still edit the text for style if the user's purpose is legitimate (e.g., their own marketing copy).
 - **Long input** (over ~3,000 characters): process section by section, keep headings, and give one combined change log.
@@ -93,7 +95,9 @@ Do not blindly replace. Examples:
 Respond in the user's language (default zh-TW).
 
 1. The rewritten text, in a single block, ready to copy.
-2. A short `修改說明` (or `Notes` if the user writes in English) with at most 5 bullets: main types of changes, any flagged facts, any terms kept on purpose.
+2. A short `修改說明` (or `Notes` if the user writes in English) with at most 5 bullets: main types of changes, any flagged facts, any terms kept on purpose. Describe only changes you actually made.
+
+Do not put alternatives inside the rewritten text (e.g. 「搭計程車（或叫車）」); pick one. Offer at most one alternative version, only when the user asked for options or the choice genuinely depends on context, and it must follow the same fact rules.
 
 If the user asks for "just the text", output only item 1.
 

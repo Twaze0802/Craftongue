@@ -39,6 +39,11 @@ Format: Mainland term → Taiwan term (note).
 - 插件 → 外掛 / 擴充功能
 - 卸載 → 解除安裝
 - 刷新 → 重新整理
+- 設置 → 設定
+- 官網 → 官網 (same; convert 官网)
+- 賬號 / 账号 → 帳號
+- 反饋 → 回饋
+- 打印機 (3D) → 3D 列印機 / 3D 印表機
 
 ## Business and marketing
 - 質量 → 品質 (see traps)
@@ -61,6 +66,12 @@ Format: Mainland term → Taiwan term (note).
 - 外賣 → 外送
 - 下單 → 下單 (same; keep)
 - 靠譜 → 可靠 / 值得信賴
+- 合同 → 合約
+- 領導 (boss) → 主管
+- 審批 → 審核 / 核准
+- 蓋章 → 用印 / 蓋章
+- 水平 (level) → 水準
+- 項目組 → 專案小組
 - 牛 / 給力 → 很強 / 厲害
 
 ## Daily life
@@ -80,3 +91,7 @@ Format: Mainland term → Taiwan term (note).
 - 搞定 → 處理好 / 搞定 (casual OK)
 - 視頻博主 → YouTuber / 影音創作者
 - 網紅 → 網紅 (same)
+- 公交 / 公交車 → 公車
+- 公交卡 → 交通卡 (do not assume 悠遊卡)
+- 飛船 → 太空船 / 飛船
+- 下周 / 周三 → 下週 / 週三
