@@ -3,7 +3,7 @@ name: taiwan-natural-writing
 description: Rewrites or localizes text into natural Taiwanese Traditional Chinese (zh-TW). Removes stiff "AI-sounding" phrasing, replaces Mainland China vocabulary with Taiwan usage, and applies Taiwan full-width punctuation, while keeping every fact unchanged. Use when the user asks to polish Chinese marketing copy, social posts, or business emails for Taiwanese readers, to convert Simplified or Mainland-style Chinese into Taiwan usage, or to localize English into zh-TW (or zh-TW into English for international readers).
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.1.1
 ---
 
 # Taiwan Natural Writing
@@ -83,7 +83,8 @@ Do not blindly replace. Examples:
 
 - **Mixed-language input** (Chinese with English terms): keep common English tech terms (App、AI、Email、Logo) if the source uses them; do not force-translate.
 - **Very short input** (under ~15 characters, e.g. a slogan): give 2–3 options instead of one.
-- **Input already natural**: say so, make only necessary fixes, and do not rewrite for the sake of change.
+- **Input already natural**: say so in one line, make only necessary fixes (vocabulary, punctuation, clear errors), and do not rewrite for the sake of change. Do not suggest new content, invented details, or "more vivid" alternative sentences; this skill edits wording, it does not add to the story.
+- **Email greetings and sign-offs**: keep the source's opening and closing. Do not add a closing formula (e.g. 順頌商祺), signature line, or extra sentences that are not in the source. If the email lacks a closing, you may suggest one in the notes instead.
 - **Hong Kong Cantonese or written Cantonese**: say this skill targets Taiwan Mandarin and ask whether to convert.
 - **Requests to "avoid AI detection" or make homework look human-written**: this skill is a style and localization editor. Do not claim or promise that output will pass any AI detector, and do not frame your help as hiding AI use. You may still edit the text for style if the user's purpose is legitimate (e.g., their own marketing copy).
 - **Long input** (over ~3,000 characters): process section by section, keep headings, and give one combined change log.
@@ -93,7 +94,7 @@ Do not blindly replace. Examples:
 Respond in the user's language (default zh-TW).
 
 1. The rewritten text, in a single block, ready to copy.
-2. A short `修改說明` (or `Notes` if the user writes in English) with at most 5 bullets: main types of changes, any flagged facts, any terms kept on purpose.
+2. A short `修改說明` (or `Notes` if the user writes in English) with at most 5 bullets: main types of changes, any flagged facts, any terms kept on purpose. Describe only changes you actually made.
 
 If the user asks for "just the text", output only item 1.
 
