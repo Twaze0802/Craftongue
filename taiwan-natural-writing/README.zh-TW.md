@@ -38,6 +38,10 @@
 
 使用前後對照請看 [`examples/`](examples/)。
 
+## 模型相容性
+
+已在 Claude Code 上用 Haiku、Sonnet、Opus 測試過（見 `examples/test-run-2026-10-19-english.md`）。Sonnet 和 Opus 效果最好。Haiku 改寫品質不錯，但你用英文下指令時，它常常還是用中文寫說明。
+
 ## 安全
 
 - 沒有任何程式、不連網路、不需要 API 金鑰。整個技能只有文字指令和一份詞彙表。

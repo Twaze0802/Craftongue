@@ -10,4 +10,5 @@
 | [03-email.md](03-email.md) | 正式 email |
 | [04-localize-en-zh.md](04-localize-en-zh.md) | 英翻中在地化 |
 | [05-context-traps.md](05-context-traps.md) | 容易換錯的詞（不該改的地方） |
-| [test-run-2026-10-18.md](test-run-2026-10-18.md) | Claude Code 自動測試 5 案例（真實輸出） |
+| [test-run-2026-10-18.md](test-run-2026-10-18.md) | Claude Code 自動測試（真實輸出） |
+| [test-run-2026-10-19-english.md](test-run-2026-10-19-english.md) | 英文指令環境＋ Haiku／Sonnet／Opus 比較 |

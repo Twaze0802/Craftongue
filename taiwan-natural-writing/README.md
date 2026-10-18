@@ -38,6 +38,10 @@ Just ask in plain language:
 
 See [`examples/`](examples/) for before/after samples.
 
+## Model compatibility
+
+Tested on Claude Code with Haiku, Sonnet, and Opus (see `examples/test-run-2026-10-19-english.md`). Best results on Sonnet and Opus. Haiku rewrites well but often writes its notes in Chinese even when you write in English.
+
 ## Safety
 
 - No scripts, no network access, no API keys. The skill is plain instructions plus a word list.

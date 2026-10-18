@@ -2,6 +2,18 @@
 
 All notable changes to this skill are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-10-19
+
+### Added
+- `references/register-and-slang.md`: three registers (formal, business, casual), particles and casual punctuation, situational internet slang, Mainland slang to replace (yyds, 絕絕子, 家人們…) vs borrowed terms Taiwan now uses (破防, 內卷…), and long-form rules.
+- `references/en-localization.md`: zh-TW → English politeness formulas, Chinglish to avoid, names/money/dates/units, English → zh-TW slang and hype handling, English AI-isms.
+- New `chat` mode (LINE and other messages), a "Long text" section, and an "Instructions in English" section.
+- Model comparison test (Haiku, Sonnet, Opus) in `examples/test-run-2026-10-19-english.md`.
+
+### Changed
+- Three override rules at the top of `SKILL.md`: notes in the language of the user's instruction, add nothing (not even flagged), one version only.
+- Description now covers tone consistency, internet slang, and English instructions.
+
 ## [0.2.0] - 2026-10-19
 
 ### Changed
