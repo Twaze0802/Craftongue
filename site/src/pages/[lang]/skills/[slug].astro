@@ -1,0 +1,89 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { langs, localizePath, type Lang } from '../../../i18n/ui';
+import { skills, type Skill } from '../../../data/skills';
+import { site } from '../../../data/site';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) =>
+    skills.map((skill) => ({ params: { lang, slug: skill.slug }, props: { skill } })),
+  );
+}
+
+const lang = Astro.params.lang as Lang;
+const { skill } = Astro.props as { skill: Skill };
+
+const l = {
+  'zh-tw': {
+    features: '功能',
+    modes: '模式',
+    example: '使用前後對照',
+    before: '使用前',
+    after: '使用後',
+    changes: '修改說明',
+    install: '安裝方式',
+    usage: '使用方式',
+    usageText: '裝好之後，直接用平常說話的方式要求就好，例如：「幫我把這段商品文案改成自然的台灣用語：……」',
+    faq: '常見問題',
+    source: '原始檔案（GitHub）',
+    back: '回技能目錄',
+    license: '免費 · MIT 授權',
+  },
+  en: {
+    features: 'Features',
+    modes: 'Modes',
+    example: 'Before and after',
+    before: 'Before',
+    after: 'After',
+    changes: 'What changed',
+    install: 'Install',
+    usage: 'How to use',
+    usageText: 'Once installed, just ask in plain words, for example: “Rewrite this product copy in natural Taiwanese Chinese: …”',
+    faq: 'FAQ',
+    source: 'Source files (GitHub)',
+    back: 'Back to skills',
+    license: 'Free · MIT license',
+  },
+}[lang];
+---
+<Base lang={lang} title={skill.title[lang]} description={skill.summary[lang]}>
+  <p><a href={localizePath(lang, 'skills/')}>← {l.back}</a></p>
+  <h1>{skill.title[lang]}</h1>
+  <p>
+    <span class="badge">{skill.status[lang]} · v{skill.version}</span>
+    <span class="badge">{l.license}</span>
+  </p>
+  <p class="muted"><code>{skill.slug}</code></p>
+  <div class="prose">
+    <p>{skill.summary[lang]}</p>
+
+    <h2>{l.features}</h2>
+    <ul>{skill.features[lang].map((f) => <li>{f}</li>)}</ul>
+
+    <h2>{l.modes}</h2>
+    <p class="tags">{skill.modes.map((m) => <code>{m}</code>)}</p>
+  </div>
+
+  <h2>{l.example}</h2>
+  <div class="compare">
+    <div class="card"><p class="label">{l.before}</p><p lang="zh-Hant-TW">{skill.example.before}</p></div>
+    <div class="card"><p class="label">{l.after}</p><p lang="zh-Hant-TW">{skill.example.after}</p></div>
+  </div>
+  <div class="prose">
+    <h3>{l.changes}</h3>
+    <ul>{skill.example.notes[lang].map((n) => <li>{n}</li>)}</ul>
+
+    <h2>{l.install}</h2>
+    {skill.install[lang].map((s) => (<><h3>{s.tool}</h3><p>{s.steps}</p></>))}
+
+    <h2>{l.usage}</h2>
+    <p>{l.usageText}</p>
+
+    <h2>{l.faq}</h2>
+    {skill.faq[lang].map((item) => (
+      <details class="faq"><summary>{item.q}</summary><p>{item.a}</p></details>
+    ))}
+
+    <p><a href={`${site.repoUrl}/tree/main/${skill.repoPath}`}>{l.source}</a></p>
+  </div>
+</Base>

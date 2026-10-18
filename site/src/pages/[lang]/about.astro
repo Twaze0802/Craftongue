@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sections from '../../components/Sections.astro';
+import { langPaths, type Lang } from '../../i18n/ui';
+import { site } from '../../data/site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const copy = {
+  'zh-tw': {
+    title: '關於我們',
+    description: '匠語 Craftongue 是一個在台灣的中英雙語 AI 技能工作室。',
+    updated: '',
+    sections: [
+      { h: '名字的由來', p: ['「匠」是用心做好一件事的職人，「語」是語言。英文名 Craftongue 由 craft（手藝）和 tongue（語言）組成。我們想把寫作和工作的手藝，做成 AI 用得上的技能。'] },
+      { h: '我們在做什麼', p: ['匠語是一個在台灣的小型工作室，製作中英雙語的 AI 技能（Agent Skills）。第一批技能專注在讓 AI 寫出自然的台灣中文，之後會加入上班族工作流程和創客（3D 列印、OpenSCAD）相關的技能。'] },
+      { h: '我們的原則', p: ['安全透明：技能沒有隱藏行為，不把你的資料傳到外部，也不要求 API 金鑰。', '原創：所有內容都由我們自己撰寫和整理。', '誠實：每個技能都附上真實的使用前後對照，不誇大效果。'] },
+    ],
+  },
+  en: {
+    title: 'About',
+    description: 'Craftongue (匠語) is a bilingual AI skills studio based in Taiwan.',
+    updated: '',
+    sections: [
+      { h: 'The name', p: ['Craftongue blends <em>craft</em> and <em>tongue</em>. Our Chinese name, 匠語, means “a craftsperson’s language.” We turn the craft of writing and everyday work into skills your AI can use.'] },
+      { h: 'What we do', p: ['Craftongue is a small studio in Taiwan making bilingual (English / Traditional Chinese) Agent Skills. Our first skills focus on natural Taiwanese Chinese writing. Office workflow and maker skills (3D printing, OpenSCAD) are next.'] },
+      { h: 'Our principles', p: ['Safe and transparent: no hidden behavior, no data sent elsewhere, no API keys required.', 'Original: everything is written and compiled by us.', 'Honest: every skill ships with real before-and-after examples, without exaggerated claims.'] },
+    ],
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description} draft={true}>
+  <h1>{copy.title}</h1>
+  {copy.updated && <p class="muted">{copy.updated}</p>}
+  <Sections sections={copy.sections} />
+</Base>

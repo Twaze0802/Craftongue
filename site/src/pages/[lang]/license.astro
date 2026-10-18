@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sections from '../../components/Sections.astro';
+import { langPaths, type Lang } from '../../i18n/ui';
+import { site } from '../../data/site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+// 草稿：付費技能上架前要定稿。
+const copy = {
+  'zh-tw': {
+    title: '授權條款',
+    description: '匠語 Craftongue 免費技能、付費技能和網站內容的授權方式。',
+    updated: '最後更新：2026-10-18（草稿）',
+    sections: [
+      { h: '免費技能', p: ['免費技能採用 <a href="https://opensource.org/license/mit">MIT 授權</a>：你可以自由使用、修改和分享，包括商業用途，只要保留原本的版權和授權聲明。'] },
+      { h: '付費技能', p: ['付費技能採用商用授權：限購買者本人使用，不可轉售、分享給他人或公開散布。完整條款會在付費技能上架前公布。'] },
+      { h: '網站內容', p: ['除另有標示外，本網站的文字和設計版權屬於匠語 Craftongue。'] },
+      { h: '商標', p: ['網站中提到的 AI 工具與產品名稱，為各自擁有者的商標。匠語與這些公司沒有隸屬或合作關係。'] },
+    ],
+  },
+  en: {
+    title: 'License Terms',
+    description: 'How Craftongue free skills, paid skills, and website content are licensed.',
+    updated: 'Last updated: 2026-10-18 (draft)',
+    sections: [
+      { h: 'Free skills', p: ['Free skills are released under the <a href="https://opensource.org/license/mit">MIT License</a>. You may use, modify, and share them, including commercially, as long as you keep the copyright and license notice.'] },
+      { h: 'Paid skills', p: ['Paid skills use a commercial license: for the purchaser’s own use only, with no resale, sharing, or public distribution. Full terms will be published before paid skills launch.'] },
+      { h: 'Website content', p: ['Unless noted otherwise, the text and design of this site are copyright Craftongue.'] },
+      { h: 'Trademarks', p: ['AI tool and product names mentioned on this site are trademarks of their respective owners. Craftongue is not affiliated with or endorsed by them.'] },
+    ],
+  },
+}[lang];
+---
+<Base lang={lang} title={copy.title} description={copy.description} draft={true}>
+  <h1>{copy.title}</h1>
+  {copy.updated && <p class="muted">{copy.updated}</p>}
+  <Sections sections={copy.sections} />
+</Base>
