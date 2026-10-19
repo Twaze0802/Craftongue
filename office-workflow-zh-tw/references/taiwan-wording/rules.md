@@ -1,12 +1,6 @@
----
-name: taiwan-natural-writing
-description: Rewrites, polishes, or translates text into natural Taiwanese Traditional Chinese (zh-TW), and zh-TW into natural English. Removes stiff "AI-sounding" phrasing, replaces Mainland China vocabulary with Taiwan usage, applies Taiwan punctuation, and never adds facts. Use this skill for ANY request to edit, rewrite, proofread, change the tone of, or translate Chinese text, even short or simple ones, including turning a casual message into a formal Taiwan business email, converting Simplified or Mainland wording to Taiwan usage, polishing marketing copy, social posts or slogans, and translating between English and Traditional Chinese for Taiwanese or international readers, making the tone consistent (formal, business, or casual chat), and fixing Mainland internet slang. Works with instructions written in English or Chinese. Typical requests: 改成台灣用語, 改自然一點, 潤飾, 潤稿, 改成正式 email, 台灣商務語氣, 簡體轉繁體, 翻成繁中, 翻成英文給外國客戶.
-license: MIT
-metadata:
-  version: 0.3.0
----
+# Taiwan wording branch: rules
 
-# Taiwan Natural Writing
+This is the Taiwan-wording branch of `office-workflow-zh-tw`. The main SKILL.md sends you here when the task is rewriting, polishing, or translating existing text, and for the final wording pass of every drafting mode.
 
 You rewrite text so it reads like it was written by a native speaker in Taiwan. You are an editor, not an author: the meaning and facts of the source must survive untouched.
 
@@ -34,10 +28,10 @@ Pick the mode from the user's request. If unclear, infer from the text (a post w
 1. **Read the whole source first.** Note the facts: names, numbers, prices, dates, URLs, product specs, claims, and calls to action. These are locked.
 2. **Detect input type.** If the input is Simplified Chinese, convert to Traditional characters first, then do vocabulary localization (step 4). Character conversion alone is not enough.
 3. **Remove AI-sounding patterns** (see "AI-isms" below). Cut, don't replace with a different filler. For English sources, drop hype openers like "We're thrilled to announce" instead of translating them (not 我們很高興宣布).
-4. **Localize vocabulary** using `references/cn-tw-terms.md`. Check context before replacing: several terms are correct in Taiwan in some senses (see "Context traps").
+4. **Localize vocabulary** using `references/taiwan-wording/cn-tw-terms.md`. Check context before replacing: several terms are correct in Taiwan in some senses (see "Context traps").
 5. **Fix punctuation** (see "Punctuation").
-6. **Set one register and keep it** (formal, semi-formal, or casual; see `references/register-and-slang.md`). Pick it from the audience the user names (friends' group, boss, government office, Dcard, customers), then remove words from the other registers. Handle internet slang with the same file: replace Mainland slang, keep Taiwan slang the source already uses, never add new slang. Keep the source's length roughly the same (±20%) unless the user asks for shorter or longer.
-   - For English ⇄ zh-TW, also read `references/en-localization.md` (politeness formulas, Chinglish, names, money, dates, English AI-isms).
+6. **Set one register and keep it** (formal, semi-formal, or casual; see `references/taiwan-wording/register-and-slang.md`). Pick it from the audience the user names (friends' group, boss, government office, Dcard, customers), then remove words from the other registers. Handle internet slang with the same file: replace Mainland slang, keep Taiwan slang the source already uses, never add new slang. Keep the source's length roughly the same (±20%) unless the user asks for shorter or longer.
+   - For English ⇄ zh-TW, also read `references/taiwan-wording/en-localization.md` (politeness formulas, Chinglish, names, money, dates, English AI-isms).
 7. **Verify** before answering: every locked fact from step 1 still appears, unchanged; nothing new was added.
 8. **Output** (see "Output format").
 

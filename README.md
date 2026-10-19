@@ -7,7 +7,7 @@ Bilingual (English / Traditional Chinese) Agent Skills that help AI tools do spe
 
 | Skill | What it does | 功能 | Status |
 |---|---|---|---|
-| [taiwan-natural-writing](taiwan-natural-writing/) | Rewrites and localizes text into natural Taiwanese Traditional Chinese | 把文字改寫成自然的台灣中文，並支援中英在地化 | v0.3.0 testing / 測試中 |
+| [office-workflow-zh-tw](office-workflow-zh-tw/) | Workplace writing for Taiwan offices (email replies, meeting to-dos, weekly reports) with a Taiwan-wording branch | 台灣職場寫作：回 email、會議轉待辦、週報，內含台灣用語分支 | v0.4.0 testing / 測試中 |
 
 Skills follow the open [Agent Skills](https://agentskills.io) format and work with Claude Code, claude.ai, Codex, Cursor and other compatible tools.
 技能採用開放的 Agent Skills 格式，可用於 Claude Code、claude.ai、Codex、Cursor 等工具。
@@ -24,5 +24,5 @@ No hidden behavior, no network calls, no API keys required. Every script (if any
 
 ## License / 授權
 
-Each skill folder contains its own [MIT](taiwan-natural-writing/LICENSE) license.
+Each skill folder contains its own [MIT](office-workflow-zh-tw/LICENSE) license.
 每個技能資料夾內附 MIT 授權。

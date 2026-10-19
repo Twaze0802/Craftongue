@@ -1,6 +1,16 @@
 # Changelog
 
-All notable changes to this skill are documented here. Versions follow [Semantic Versioning](https://semver.org/).
+All notable changes to this skill (formerly `taiwan-natural-writing`) are documented here. Versions follow [Semantic Versioning](https://semver.org/).
+
+## [0.4.0] - 2026-10-19
+
+### Changed
+- **Renamed from `taiwan-natural-writing` to `office-workflow-zh-tw`.** Workplace writing (product line B) is now the main skill; the former Taiwan-wording skill is a branch inside it (`references/taiwan-wording/`). The wording rules are unchanged and also run as the final pass of every draft.
+
+### Added
+- Three drafting jobs: `email-reply`, `meeting-to-todo`, `weekly-report` (`references/office-workflows.md`).
+- Scenario rules for 9 fields (`references/scenarios.md`): legal, medical, education, government 公文, finance and insurance, real estate, e-commerce support, HR, tech. Each has Taiwan terms, a structure, and a **Never** list that overrides style requests: no law article numbers, doses, rates, or citations from memory; no legal, medical, or financial judgment; no personal data in group or public text; no discriminatory hiring conditions; no hype or emoji outside casual channels.
+- Override rules: no invented reasons, statuses, or promises (placeholders instead); rewrites return original content only; dates kept as written.
 
 ## [0.3.0] - 2026-10-19
 
