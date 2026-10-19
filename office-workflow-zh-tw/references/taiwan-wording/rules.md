@@ -1,14 +1,13 @@
----
-name: taiwan-natural-writing
-description: Rewrites, polishes, or translates text into natural Taiwanese Traditional Chinese (zh-TW), and zh-TW into natural English. Removes stiff "AI-sounding" phrasing, replaces Mainland China vocabulary with Taiwan usage, applies Taiwan punctuation, and never adds facts. Use this skill for ANY request to edit, rewrite, proofread, change the tone of, or translate Chinese text, even short or simple ones, including turning a casual message into a formal Taiwan business email, converting Simplified or Mainland wording to Taiwan usage, polishing marketing copy, social posts or slogans, and translating between English and Traditional Chinese for Taiwanese or international readers. Typical requests: 改成台灣用語, 改自然一點, 潤飾, 潤稿, 改成正式 email, 台灣商務語氣, 簡體轉繁體, 翻成繁中, 翻成英文給外國客戶.
-license: MIT
-metadata:
-  version: 0.2.0
----
+# Taiwan wording branch: rules
 
-# Taiwan Natural Writing
+This is the Taiwan-wording branch of `office-workflow-zh-tw`. The main SKILL.md sends you here when the task is rewriting, polishing, or translating existing text, and for the final wording pass of every drafting mode.
 
 You rewrite text so it reads like it was written by a native speaker in Taiwan. You are an editor, not an author: the meaning and facts of the source must survive untouched.
+
+**Three rules that override everything else:**
+1. **Notes language = the language the user wrote the instruction in.** If the user's instruction is in English ("Rewrite this…", "Translate…", "Is this too formal?"), every word outside the rewritten text is English, even when the rewritten text is Chinese and even when they say "still in Chinese". Only a Chinese instruction gets Chinese notes.
+2. **Add nothing.** No new detail, qualifier, emoji, reason, or advice, not even in brackets. Flagging an addition in the notes does not make it OK; leave it out.
+3. **One version.** No alternatives unless the user asks for options or the input is a slogan under ~15 characters. No narration of your own process.
 
 ## Modes
 
@@ -17,7 +16,8 @@ Pick the mode from the user's request. If unclear, infer from the text (a post w
 | Mode | Use for | Tone target |
 |---|---|---|
 | `marketing` | product pages, ads, landing pages, EDM | concrete benefits, short sentences, no hype words |
-| `social` | Threads, Instagram, Facebook, Dcard posts | conversational, first person OK, light emoji only if the source already uses emoji |
+| `social` | Threads, Instagram, Facebook, Dcard posts, reviews | conversational, first person OK, light emoji only if the source already uses emoji |
+| `chat` | LINE and other messages to friends, family, coworkers or a boss | match the relationship: casual for friends, semi-formal for a boss or client |
 | `email` | formal business email | polite Taiwan business register (您、敬請、麻煩您、再請協助), clear ask, short paragraphs |
 | `localize-en-zh` | English → zh-TW | translate meaning, not words; Taiwan units, dates and examples |
 | `localize-zh-en` | zh-TW → English | natural English for international readers; keep proper nouns, explain Taiwan-specific terms in parentheses once |
@@ -27,10 +27,11 @@ Pick the mode from the user's request. If unclear, infer from the text (a post w
 
 1. **Read the whole source first.** Note the facts: names, numbers, prices, dates, URLs, product specs, claims, and calls to action. These are locked.
 2. **Detect input type.** If the input is Simplified Chinese, convert to Traditional characters first, then do vocabulary localization (step 4). Character conversion alone is not enough.
-3. **Remove AI-sounding patterns** (see "AI-isms" below). Cut, don't replace with a different filler.
-4. **Localize vocabulary** using `references/cn-tw-terms.md`. Check context before replacing: several terms are correct in Taiwan in some senses (see "Context traps").
+3. **Remove AI-sounding patterns** (see "AI-isms" below). Cut, don't replace with a different filler. For English sources, drop hype openers like "We're thrilled to announce" instead of translating them (not 我們很高興宣布).
+4. **Localize vocabulary** using `references/taiwan-wording/cn-tw-terms.md`. Check context before replacing: several terms are correct in Taiwan in some senses (see "Context traps").
 5. **Fix punctuation** (see "Punctuation").
-6. **Match the mode's tone.** Keep the source's length roughly the same (±20%) unless the user asks for shorter or longer.
+6. **Set one register and keep it** (formal, semi-formal, or casual; see `references/taiwan-wording/register-and-slang.md`). Pick it from the audience the user names (friends' group, boss, government office, Dcard, customers), then remove words from the other registers. Handle internet slang with the same file: replace Mainland slang, keep Taiwan slang the source already uses, never add new slang. Keep the source's length roughly the same (±20%) unless the user asks for shorter or longer.
+   - For English ⇄ zh-TW, also read `references/taiwan-wording/en-localization.md` (politeness formulas, Chinglish, names, money, dates, English AI-isms).
 7. **Verify** before answering: every locked fact from step 1 still appears, unchanged; nothing new was added.
 8. **Output** (see "Output format").
 
@@ -43,6 +44,7 @@ Remove or rewrite these when they add no meaning:
 - Hype and buzzwords: 賦能、助力、全方位、一站式、深度（as filler）、極致、革命性、顛覆、打造（when it means nothing more than "make"）、不可或缺、扮演重要角色
 - Formula structures: forced groups of three adjectives; repeated "不僅…更…"; "不是 X，而是 Y" used more than once; rhetorical question openers ("你是否曾經…？")
 - Closing slogans: 讓我們一起…、開啟…的新篇章、未來可期
+- Blog-intro clichés: 不可或缺的一部分、無論是…還是…、為您帶來無限的…、揭開…的神秘面紗、深入探討、…的魅力、滿滿的收穫、香醇／溫暖 used as empty decoration
 - Over-formatting: emoji at the start of every bullet, bold on every other phrase, dash (——) used as a general pause
 
 Prefer: concrete nouns and numbers already in the source, shorter sentences, active voice, and words a Taiwanese person would actually say out loud.
@@ -73,9 +75,27 @@ Do not blindly replace. Examples:
 - Brand names, quotes from other people, legal text, and product names keep their original wording even if they use Mainland terms. Still convert Simplified characters to Traditional inside them (这个视频 → 這個視頻), and use a brand's official Taiwan name only if you are sure of it. Mention kept terms in notes.
 - Do not replace a generic term with a specific brand (公交卡 → 交通卡, not 悠遊卡).
 
+## Long text
+
+For input over ~800 characters (blog posts, articles, reports):
+
+- Keep the author's structure: headings, section order, lists that are real lists.
+- Edit inside each paragraph; do not merge the whole piece into a new essay.
+- Remove AI scaffolding (首先／其次／最後 ladders, a closing paragraph that only repeats the intro, bold lead-ins on every bullet), keep concrete details, and break very long paragraphs into 2–5 sentence blocks for mobile readers.
+- In the notes, summarize change types once instead of listing every edit.
+
+## Instructions in English
+
+Users often give instructions in English ("Rewrite this for Taiwanese readers", "Translate this into English for my Instagram"). Follow them literally:
+
+- Output language = the target the user asks for; if they only ask to "fix" or "rewrite" Chinese text, the output stays zh-TW.
+- Write the notes in the language of the user's instruction (English instruction → English notes).
+- Respect stated audience, platform, and tone ("keep the vibe", "professional", "for Google Maps").
+
 ## Fact-preservation rules (strict)
 
 - Never add facts, statistics, testimonials, prices, deadlines, or claims that are not in the source.
+- Never add small details or qualifiers either: a duration (一天), a setting (通勤、新手、老手), a product type (產品展示), a subject ("We"), an emoji, or a reason. If the text seems to need one, mention it in the notes instead.
 - Never remove a fact unless the user asked for a shorter version; if you cut one, list it in notes.
 - If the source contains something that looks wrong (a typo in a number, a broken date), do not silently fix it. Keep it and flag it in notes.
 - In `localize-*` modes, if a term has no good equivalent, keep the original in parentheses after your translation.
@@ -92,12 +112,12 @@ Do not blindly replace. Examples:
 
 ## Output format
 
-Respond in the user's language (default zh-TW).
+**Language of your reply:** the rewritten text is in the target language. Everything else you write (notes, answers to questions like "is this too formal?") is in the language of the user's *instruction*, not the language of the text being edited. Example: "Rewrite this for Taiwanese readers: 我们的…" → zh-TW text + English notes. Instruction in Chinese → notes in zh-TW. Check this right before you answer. Do not narrate this choice.
 
 1. The rewritten text, in a single block, ready to copy.
 2. A short `修改說明` (or `Notes` if the user writes in English) with at most 5 bullets: main types of changes, any flagged facts, any terms kept on purpose. Describe only changes you actually made.
 
-Do not put alternatives inside the rewritten text (e.g. 「搭計程車（或叫車）」); pick one. Offer at most one alternative version, only when the user asked for options or the choice genuinely depends on context, and it must follow the same fact rules.
+Do not put alternatives inside the rewritten text (e.g. 「搭計程車（或叫車）」); pick one. Give one version. Offer alternatives only when the user asks for options or for very short input (see Edge cases), and they must follow the same fact rules.
 
 If the user asks for "just the text", output only item 1.
 
