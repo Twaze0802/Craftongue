@@ -117,4 +117,4 @@ Structure:
 
 ## Casual channels
 
-Only these allow emoji and light slang, and only if the user's own text uses them: personal LINE chats, social posts, and a teacher's or shop's friendly LINE message (one emoji at most). Everything else in this file is no emoji, no slang.
+Only these allow emoji and light slang: personal LINE chats, social posts (including a clinic's or shop's FB or IG post, if the user asks for or uses emoji and hashtags; the claim bans above still apply), and a teacher's or shop's friendly LINE message (one emoji at most). Everything else in this file is no emoji, no slang.

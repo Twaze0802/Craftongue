@@ -2,6 +2,14 @@
 
 All notable changes to this skill (formerly `taiwan-natural-writing`) are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.6.0] - 2026-10-20
+
+### Changed
+- Tuned for Haiku. The description now lists more trigger phrases (婉拒, LINE 請假, FB 貼文, 診所或醫美廣告, action items, Instagram caption).
+- New "Final check" list at the end of `SKILL.md` repeats the rules Haiku tended to skip: no article numbers or fines anywhere (including when declining), Never lists beat "keep the original", no invented agency or specialty names, weekdays kept as written, templates kept as written, peer-agency 公文 uses 請查照, no inferred details, English instruction → English output.
+- my-profile.md is mentioned only when a letter needs a signature.
+- Clinic or shop social posts may use emoji and hashtags; claim bans still apply.
+
 ## [0.5.0] - 2026-10-20
 
 ### Added
