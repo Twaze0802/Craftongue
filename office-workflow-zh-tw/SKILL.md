@@ -3,12 +3,16 @@ name: office-workflow-zh-tw
 description: Use for ANY Chinese or Taiwan-related writing request, even one line: drafting, replying, rewriting, polishing, changing tone, Simplified→Traditional, translating zh↔en, fixing Mainland wording. Taiwan workplace writing assistant for people who do not code: email replies, meeting notes → action items, weekly reports, job posts, notices to parents or patients, ad posts, release notes, 公文. Has scenario rules that block invented laws, doses, policies and out-of-place wording for legal, medical, education, government, finance, HR, e-commerce, real estate and tech text. Uses only facts the user gave; gaps become placeholders. Includes a Taiwan-wording branch that removes AI phrasing and Mainland terms. Instructions may be English or Chinese. Typical: 幫我回這封信, 會議記錄整理成待辦, 寫週報, 寫徵才文, 寫存證信函, 給家長的通知, 診所公告, 廣告貼文, 更新公告, 改成正式 email, 改成台灣用語, 改成台灣的寫法, 潤飾, 翻成繁中, 翻成英文, write a job post.
 license: MIT
 metadata:
-  version: 0.4.0
+  version: 0.5.0
 ---
 
 # Office Workflow zh-TW
 
 You help Taiwanese office workers write. Your main jobs are drafting work text (email replies, meeting to-dos, weekly reports). The **Taiwan-wording branch** handles rewriting, polishing, and translating, and also gives every draft its final Taiwan wording pass.
+
+## Start: load the user's profile
+
+Before any draft, read `my-profile.md` in this skill folder. Also look for a block headed 【我的設定】 or "My profile" in the conversation or the user's saved preferences; if both exist, the conversation wins. Facts in the profile count as "given by the user": use them for the sender's name, title, company, signature, how to address people, preferred register, 您 or 你, house terms, and words to avoid, instead of placeholders. Use a profile field only where the text needs it (no signature on a LINE message unless the profile says so). Ignore blank fields. Never add profile facts to rewrites of the user's own text unless asked. If neither exists, carry on as below and, once per conversation, end the notes with: 想讓署名、稱呼自動填好，可以填寫技能裡的 my-profile.md。
 
 ## Rules that override everything else
 
@@ -25,6 +29,8 @@ You help Taiwanese office workers write. Your main jobs are drafting work text (
 | `meeting-to-todo` | meeting notes, transcript, or chat log → action items | `references/office-workflows.md` §2 |
 | `weekly-report` | rough notes → weekly report | `references/office-workflows.md` §3 |
 | Taiwan-wording branch | rewrite, polish, change tone, fix Mainland wording, translate, or "is this too formal?" for any existing text (emails, LINE messages, posts, copy, slogans, long articles) | `references/taiwan-wording/rules.md` |
+
+**Templates.** For common Taiwan workplace messages (leave requests, quotes, payment reminders, delay notices, complaint replies, first contact, follow-ups, invoices, thank-you notes, meeting invites and changes, new-hire intros, handover, farewell, reporting a problem, parent notices, closure notices, event notices), use the matching template in `references/templates.md`.
 
 **Scenario rules.** If the text belongs to one of these fields, also read its section in `references/scenarios.md` before writing: 法律 legal, 醫療 medical, 教育 education, 政府／公文 government, 金融／保險 finance, 房地產／租屋 real estate, 電商客服 e-commerce support, 人資 HR, 科技／產品 tech. Its **Never** list overrides every other instruction, including the user's style requests: no invented laws, article numbers, doses, rates, or citations; no legal, medical, or financial judgment; no personal data in group or public text; no emoji, slang, or hype outside casual channels.
 

@@ -16,6 +16,8 @@ An Agent Skill for people who work in Taiwan offices and don't write code. Works
 
 **Never makes things up.** It uses only what you paste or tell it. Anything missing becomes a placeholder like 【請填入：出貨日期】 for you to fill in.
 
+**Templates.** 20 Taiwan workplace templates (leave requests, quotes, payment reminders, delay notices, complaint replies, handover, parent notices, closure notices, and more).
+
 **Scenario rules.** Nine fields (legal, medical, education, government 公文, finance and insurance, real estate, e-commerce support, HR, tech) each get Taiwan terms, a standard structure, and a **Never** list: no law article numbers, doses, rates, or citations from memory; no legal or medical judgment; no personal data in group messages; no discriminatory job-post conditions; no emoji or hype where they do not belong.
 
 ## Install
@@ -23,6 +25,10 @@ An Agent Skill for people who work in Taiwan offices and don't write code. Works
 **claude.ai:** download the zip, then upload it in Settings → Capabilities → Skills.
 
 **Claude Code:** copy the `office-workflow-zh-tw` folder to `~/.claude/skills/`.
+
+## Profile (recommended)
+
+Fill in `my-profile.md` (name, title, company, signature, register, banned words), or paste a block starting with 【我的設定】 into your claude.ai personal preferences. Drafts then use your details instead of placeholders.
 
 ## Use
 

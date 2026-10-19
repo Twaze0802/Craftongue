@@ -2,6 +2,12 @@
 
 All notable changes to this skill (formerly `taiwan-natural-writing`) are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.5.0] - 2026-10-20
+
+### Added
+- `references/templates.md`: 20 Taiwan workplace templates (leave requests, quotes, payment reminders, delay notices, complaint replies, handover, parent notices, closure notices, and more) with fixed structure and placeholders.
+- `my-profile.md`: a fill-in profile (name, title, company, signature, register, 您/你, contacts, house terms, banned words). The skill reads it before every draft and uses it instead of placeholders. A 【我的設定】 block in the conversation or saved preferences works too.
+
 ## [0.4.0] - 2026-10-19
 
 ### Changed
