@@ -42,7 +42,7 @@ Fill in `my-profile.md` (name, title, company, signature, register, banned words
 
 ## Model compatibility
 
-Best results on Sonnet and Opus. Haiku works but often writes its notes in Chinese even when you write in English. See `examples/` for test records.
+Best results on Sonnet and Opus. v0.6.0 is tuned for Haiku: 18–20 of 21 test cases pass. See `examples/` for test records.
 
 ## Safety
 
