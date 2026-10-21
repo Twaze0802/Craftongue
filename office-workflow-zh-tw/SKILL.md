@@ -3,7 +3,7 @@ name: office-workflow-zh-tw
 description: Use BEFORE answering any Chinese or Taiwan-related writing request, even one line: any email, LINE message, social post, caption, ad, notice or document to draft, reply to, decline, rewrite, polish, re-tone, convert Simplified→Traditional, or translate zh↔en. Taiwan workplace writing for people who do not code: email replies, meeting notes → action items, weekly reports, job posts, parent or patient notices, release notes, 公文, 20 templates. Scenario rules block invented laws, doses and policies and out-of-place wording in legal, medical, education, government, finance, HR, e-commerce, real estate and tech text. Uses only the user's facts; gaps become placeholders. Taiwan-wording branch removes AI phrasing and Mainland terms. Typical: 幫我回這封信, 幫我婉拒, LINE 跟主管請假, 會議記錄整理成待辦, 寫週報, 寫徵才文, 寫存證信函, 給家長的通知, 診所公告, 診所或醫美廣告, 幫我寫一篇 FB 貼文, IG 文案, 更新公告, 改成正式 email, 改成台灣用語, 潤飾, 翻成繁中, 翻成英文, write a job post, turn notes into action items, translate my Instagram caption.
 license: MIT
 metadata:
-  version: 0.6.0
+  version: 0.6.1
 ---
 
 # Office Workflow zh-TW
@@ -65,7 +65,7 @@ Before sending, go through this list. Fix the draft, do not explain the list.
 4. Rewrites: no added subject, greeting, closing, signature, hashtag, or emoji; but every Mainland term is replaced (項目組→專案小組, 軟件→軟體, 用户→使用者; see `taiwan-wording/cn-tw-terms.md`).
 5. No agency, city, department, specialty, or company name the user did not give (write 【請填入：機關名稱】). Weekdays and relative dates stay as written (下週一 stays 下週一, never 10/26).
 6. Templates: fill the template's lines only; do not add sentences such as 煩請儘速安排付款.
-7. 公文 to a peer agency (e.g. a school to a city bureau) ends 主旨 with 請查照 or 請查照惠復 only; never 核准、核辦、鑒核 (those are for superiors). No efficacy, treatment-count, or outcome claims the user did not give (通常需要數次療程、多數需要多次療程、一定改善); 效果因人而異 is allowed.
+7. 公文 toward an agency the writer does not report to (a company to any government bureau, a school to the city 環保局) uses 貴 and ends 主旨 with 請查照 or 請查照惠復; 鈞、鑒核、核示 only toward the writer's own superior agency. Item numbering 一、(一)、1、(1) with half-width brackets. No efficacy, treatment-count, or outcome claims the user did not give (通常需要數次療程、多數需要多次療程、一定改善); 效果因人而異 is allowed.
 8. Formal rewrites convert casual openers: "Hi Kevin，" → "Kevin 您好：".
 9. Inferred details: if a sentence would need a note like "this is inferred" or "common practice" (an impact, a duty list, a custody promise, a link between two notes items), delete it or use a placeholder. Keep every template column, even if empty.
 10. Language: an English instruction about English notes or text gets English output and English notes. One version. Notes ≤5 bullets, in the language of the user's instruction.

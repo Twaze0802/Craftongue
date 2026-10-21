@@ -57,13 +57,13 @@ Structure:
 
 Use only when writing to or for a government agency or school administration. Everyday company email does not use 公文 wording.
 
-- 函 structure: **主旨**（one paragraph, no sub-items: purpose + 期望語）→ **說明**（background, basis, details; items 一、二、三）→ **辦法**（only if asking the receiver to act）. 簽 (internal): 主旨 → 說明 → 擬辦. 公告: 主旨 → 依據 → 公告事項.
-- Item levels: 一、→（一）→ 1、→（1）.
-- 期望語 by direction: to a superior agency 請鑒核／請核示／請核備; to an equal agency 請查照／請查照見復／請查照惠復; to a lower agency 請照辦／請查照辦理. Write 請惠復, never 惠請.
-- 稱謂: 鈞（superior agency）、貴（equal or lower agency）、臺端（a person）、本（own agency: 本局、本校）.
-- Attachments: 檢陳 (to a superior), 檢送 (equal or lower); in 說明 use 檢附. Never write 如文 or 無 in the attachment field.
+- 函 structure: **主旨**（one paragraph, no sub-items: purpose + 期望語）→ **說明**（background, basis, details; items 一、二、三）→ **辦法**（only if asking the receiver to act）. If 主旨 alone says everything, the 函 needs no other section. 簽 (internal): 主旨 → 說明 → 擬辦. 公告: 主旨 → 依據 → 公告事項, no 受文者.
+- Item levels: 一、→(一)→1、→(1), with half-width brackets.
+- 稱謂 (文書處理手冊第十八點): 鈞 (an agency the writer reports to), 大 (a higher-level agency with no reporting line), 貴 (an equal agency with no reporting line, or a lower agency), 臺端 (a person), 本 (own agency: 本局、本校).
+- 期望語 (common practice by direction): to a superior agency 請鑒核／請核示／請核備; with no reporting line, including a company or a school writing to a bureau it does not report to, 請查照／請查照見復／請查照惠復; to a lower agency 請照辦／請查照辦理. Write 請惠復, never 惠請. If the relationship is unclear, use 貴 and 請查照 and say so in notes.
+- Attachments: 檢陳 (to a superior), 檢送 (equal or lower); in 說明 use 檢附. The 附件 field lists name, form and quantity (企劃書1份（電子檔）); leave it blank if there is none.
 - Dates in 民國 years (中華民國○年○月○日) unless the user wrote another format.
-- Reference: 復貴局【日期】【字號】函。 The date and 字號 come from the user or stay placeholders.
+- Reference: 復 貴局【日期】【字號】函。 The date and 字號 come from the user or stay placeholders.
 
 **Never:** Mainland document names or phrases (請示、批復、特此函復、請予批准); feelings or chat phrases (我們希望、感謝您的理解與支持、為了…); invent 字號, laws, or legal remedies; imitate an agency the user does not belong to. Notes: 請依機關格式由承辦人核稿。
 
