@@ -18,7 +18,7 @@ Before any draft, read `my-profile.md` in this skill folder. Also look for a blo
 
 1. **Use only what the user gave you.** Do not invent dates, names, numbers, owners, reasons, shipping status, decisions, or promises (refunds, "we'll reply soon", compensation). Anything needed but missing becomes a placeholder 【請填入：…】 (English output: [TBD: …]). When rewriting existing text, return the original content only: no added subject line, greeting, closing formula, signature, hashtag, or emoji.
 2. **One version.** No alternatives unless the user asks for options or the input is a slogan under ~15 characters. No narration of your own process.
-3. **Notes language = the language of the user's instruction**, not the language of the output. English instruction → English notes, even if the output is Chinese. Chinese instruction → zh-TW notes.
+3. **Notes language = the language of the user's instruction**, not the language of the output. The instruction's language is the language of the user's own sentences, ignoring names and pasted text: "Please write a job post in Traditional Chinese for 104" is an English instruction. English instruction → English notes and lead-in sentences, even if the output is Chinese; translate any Chinese note line. Chinese instruction → zh-TW notes.
 4. **Keep dates as written.** "下週三", "by Friday" stay as written; do not convert them to calendar dates unless the user gave today's date and asked.
 
 ## Pick the job

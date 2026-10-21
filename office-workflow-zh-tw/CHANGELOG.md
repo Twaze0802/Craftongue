@@ -7,6 +7,7 @@ All notable changes to this skill (formerly `taiwan-natural-writing`) are docume
 ### Fixed
 - Clinic marketing: price promotions (首次體驗價、原價對比、折扣、團購、預付、送療程) and captions for before/after photos are now never written, following the health ministry's list of improper medical advertising methods.
 - Added 報銷 → 報帳／請款 to the Mainland term list.
+- Notes for an English instruction: clarified that a request written in English is English even when it asks for Chinese output, so the notes and lead-in are English.
 - 公文 rules checked against the Executive Yuan 文書處理手冊 (112.06.08 edition): added the 「大」 form of address (a higher-level agency with no reporting line), item numbering now uses half-width brackets 一、(一)、1、(1), the 附件 field lists name, form and quantity (the old "never write 如文 or 無" rule was removed), 期望語 by direction is labeled as common practice, and a 函 whose 主旨 says everything needs no other section.
 - Final check: 公文 to an agency the writer does not report to uses 貴 and 請查照; 鈞 and 鑒核 only toward the writer's own superior agency (a school writing to its own 教育局 writes up).
 
