@@ -7,7 +7,7 @@ Bilingual (English / Traditional Chinese) Agent Skills that help AI tools do spe
 
 | Skill | What it does | 功能 | Status |
 |---|---|---|---|
-| [office-workflow-zh-tw](office-workflow-zh-tw/) | Workplace writing for Taiwan offices (email replies, meeting to-dos, weekly reports) with a Taiwan-wording branch | 台灣職場寫作：回 email、會議轉待辦、週報，內含台灣用語分支 | v0.4.0 testing / 測試中 |
+| [office-workflow-zh-tw](office-workflow-zh-tw/) | Workplace writing for Taiwan offices (email replies, meeting to-dos, weekly reports) with a Taiwan-wording branch | 台灣職場寫作：回 email、會議轉待辦、週報，內含台灣用語分支 | v0.6.1 testing / 測試中 |
 
 Skills follow the open [Agent Skills](https://agentskills.io) format and work with Claude Code, claude.ai, Codex, Cursor and other compatible tools.
 技能採用開放的 Agent Skills 格式，可用於 Claude Code、claude.ai、Codex、Cursor 等工具。

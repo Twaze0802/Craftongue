@@ -2,6 +2,29 @@
 
 All notable changes to this skill (formerly `taiwan-natural-writing`) are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.6.1] - 2026-10-21
+
+### Fixed
+- Clinic marketing: price promotions (首次體驗價、原價對比、折扣、團購、預付、送療程) and captions for before/after photos are now never written, following the health ministry's list of improper medical advertising methods.
+- Added 報銷 → 報帳／請款 and 對接 → 聯絡窗口／對口 to the Mainland term list.
+- Notes for an English instruction: clarified that a request written in English is English even when it asks for Chinese output, so the notes and lead-in are English.
+- 公文 rules checked against the Executive Yuan 文書處理手冊 (112.06.08 edition): added the 「大」 form of address (a higher-level agency with no reporting line), item numbering now uses half-width brackets 一、(一)、1、(1), the 附件 field lists name, form and quantity (the old "never write 如文 or 無" rule was removed), 期望語 by direction is labeled as common practice, and a 函 whose 主旨 says everything needs no other section.
+- Final check: 公文 to an agency the writer does not report to uses 貴 and 請查照; 鈞 and 鑒核 only toward the writer's own superior agency (a school writing to its own 教育局 writes up).
+
+## [0.6.0] - 2026-10-20
+
+### Changed
+- Tuned for Haiku. The description now lists more trigger phrases (婉拒, LINE 請假, FB 貼文, 診所或醫美廣告, action items, Instagram caption).
+- New "Final check" list at the end of `SKILL.md` repeats the rules Haiku tended to skip: no article numbers or fines anywhere (including when declining), Never lists beat "keep the original", no invented agency or specialty names, weekdays kept as written, templates kept as written, peer-agency 公文 uses 請查照, no inferred details, English instruction → English output.
+- my-profile.md is mentioned only when a letter needs a signature.
+- Clinic or shop social posts may use emoji and hashtags; claim bans still apply.
+
+## [0.5.0] - 2026-10-20
+
+### Added
+- `references/templates.md`: 20 Taiwan workplace templates (leave requests, quotes, payment reminders, delay notices, complaint replies, handover, parent notices, closure notices, and more) with fixed structure and placeholders.
+- `my-profile.md`: a fill-in profile (name, title, company, signature, register, 您/你, contacts, house terms, banned words). The skill reads it before every draft and uses it instead of placeholders. A 【我的設定】 block in the conversation or saved preferences works too.
+
 ## [0.4.0] - 2026-10-19
 
 ### Changed

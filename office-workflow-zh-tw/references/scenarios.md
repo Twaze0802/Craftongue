@@ -38,7 +38,7 @@ Structure:
 - 衛教: 一句重點 → 是什麼 → 居家照護 → 出現哪些情況要立即就醫（only warning signs the user gave）→ 預防. If the user gave no medical content, do not write any from general knowledge: no symptoms, warning signs, foods, items to bring, or care steps. Write the structure with 【請填入：依醫囑】 lines and add the review line 建議發送前請醫師審閱。 (required). Short sentences; first use of a medical term gets a plain explanation in brackets.
 - Medical → plain: 禁食→請不要吃東西或喝水、PRN→需要時再使用、TID→一天三次. Keep the original term if the patient may need to search it.
 
-**Never:** diagnose, interpret a test result as 正常／異常, suggest starting, stopping, or changing a medicine, or add a drug, dose, side effect, or warning sign the user did not give (→ 【請填入：依醫囑】). In clinic marketing, never write 保證治癒、根治、無副作用、最好、第一, patient testimonials as proof, or before/after promises; add the note line: 醫療廣告請先確認符合衛生主管機關規範。 No 溫馨提示 stacked; one 小提醒 is fine.
+**Never:** diagnose, interpret a test result as 正常／異常, suggest starting, stopping, or changing a medicine, or add a drug, dose, side effect, or warning sign the user did not give (→ 【請填入：依醫囑】). In clinic marketing, never write 保證治癒、根治、無副作用、最好、第一, patient testimonials as proof, before/after promises or captions for before/after photos, or price promotions (首次體驗價、原價對比、折扣、團購、預付、送療程), even if the user asks; add the note line: 醫療廣告不能保證療效、用優惠價或團購促銷，也不能用術前術後對比照或病患見證宣傳，所以這幾項沒有寫；發布前請向當地衛生局確認。 No 溫馨提示 stacked; one 小提醒 is fine.
 
 ## 3. 教育 Education (teacher → parent, school notices, syllabus, student comments, academic writing)
 
@@ -57,13 +57,13 @@ Structure:
 
 Use only when writing to or for a government agency or school administration. Everyday company email does not use 公文 wording.
 
-- 函 structure: **主旨**（one paragraph, no sub-items: purpose + 期望語）→ **說明**（background, basis, details; items 一、二、三）→ **辦法**（only if asking the receiver to act）. 簽 (internal): 主旨 → 說明 → 擬辦. 公告: 主旨 → 依據 → 公告事項.
-- Item levels: 一、→（一）→ 1、→（1）.
-- 期望語 by direction: to a superior agency 請鑒核／請核示／請核備; to an equal agency 請查照／請查照見復／請查照惠復; to a lower agency 請照辦／請查照辦理. Write 請惠復, never 惠請.
-- 稱謂: 鈞（superior agency）、貴（equal or lower agency）、臺端（a person）、本（own agency: 本局、本校）.
-- Attachments: 檢陳 (to a superior), 檢送 (equal or lower); in 說明 use 檢附. Never write 如文 or 無 in the attachment field.
+- 函 structure: **主旨**（one paragraph, no sub-items: purpose + 期望語）→ **說明**（background, basis, details; items 一、二、三）→ **辦法**（only if asking the receiver to act）. If 主旨 alone says everything, the 函 needs no other section. 簽 (internal): 主旨 → 說明 → 擬辦. 公告: 主旨 → 依據 → 公告事項, no 受文者.
+- Item levels: 一、→(一)→1、→(1), with half-width brackets.
+- 稱謂 (文書處理手冊第十八點): 鈞 (an agency the writer reports to), 大 (a higher-level agency with no reporting line), 貴 (an equal agency with no reporting line, or a lower agency), 臺端 (a person), 本 (own agency: 本局、本校).
+- 期望語 (common practice by direction): to a superior agency 請鑒核／請核示／請核備; with no reporting line, including a company or a school writing to a bureau it does not report to, 請查照／請查照見復／請查照惠復; to a lower agency 請照辦／請查照辦理. Write 請惠復, never 惠請. If the relationship is unclear, use 貴 and 請查照 and say so in notes.
+- Attachments: 檢陳 (to a superior), 檢送 (equal or lower); in 說明 use 檢附. The 附件 field lists name, form and quantity (企劃書1份（電子檔）); leave it blank if there is none.
 - Dates in 民國 years (中華民國○年○月○日) unless the user wrote another format.
-- Reference: 復貴局【日期】【字號】函。 The date and 字號 come from the user or stay placeholders.
+- Reference: 復 貴局【日期】【字號】函。 The date and 字號 come from the user or stay placeholders.
 
 **Never:** Mainland document names or phrases (請示、批復、特此函復、請予批准); feelings or chat phrases (我們希望、感謝您的理解與支持、為了…); invent 字號, laws, or legal remedies; imitate an agency the user does not belong to. Notes: 請依機關格式由承辦人核稿。
 
@@ -117,4 +117,4 @@ Structure:
 
 ## Casual channels
 
-Only these allow emoji and light slang, and only if the user's own text uses them: personal LINE chats, social posts, and a teacher's or shop's friendly LINE message (one emoji at most). Everything else in this file is no emoji, no slang.
+Only these allow emoji and light slang: personal LINE chats, social posts (including a clinic's or shop's FB or IG post, if the user asks for or uses emoji and hashtags; the claim bans above still apply), and a teacher's or shop's friendly LINE message (one emoji at most). Everything else in this file is no emoji, no slang.
