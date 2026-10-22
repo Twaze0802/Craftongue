@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build output and packaged installs (zips are attached to releases, not committed)
+dist/
+*.zip
+
+# Paid editions must never be committed to this repo
+skills-paid/
+dist-paid/
+*-pro/
+*付費版*
+
+# Local secrets
+.env
+.env.*
