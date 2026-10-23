@@ -1,10 +1,12 @@
-# Push a tag like v0.6.2 to publish a GitHub Release with the skill zip.
+# Push a tag like v0.6.2, or run this workflow by hand, to publish a GitHub
+# Release with the skill zip. A manual run tags the version in SKILL.md.
 # The zip keeps a stable name so README links to releases/latest/download/ keep working.
 name: Release skill zip
 
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,13 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check SKILL.md version matches the tag
+      - name: Work out the tag
         run: |
           version=$(sed -n 's/^  version: //p' office-workflow-zh-tw/SKILL.md)
-          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "v$version" != "$GITHUB_REF_NAME" ]; then
             echo "SKILL.md says $version but the tag is $GITHUB_REF_NAME"
             exit 1
           fi
+          echo "TAG=v$version" >> "$GITHUB_ENV"
 
       - name: Build zip
         run: zip -r office-workflow-zh-tw.zip office-workflow-zh-tw -x '*.DS_Store'
@@ -30,7 +33,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          notes=$(awk -v v="${GITHUB_REF_NAME#v}" '$0 ~ "^## \\[" v "\\]" {f=1; next} /^## \[/ {f=0} f' office-workflow-zh-tw/CHANGELOG.md)
-          gh release create "$GITHUB_REF_NAME" office-workflow-zh-tw.zip \
-            --title "office-workflow-zh-tw $GITHUB_REF_NAME" \
+          notes=$(awk -v v="${TAG#v}" '$0 ~ "^## \\[" v "\\]" {f=1; next} /^## \[/ {f=0} f' office-workflow-zh-tw/CHANGELOG.md)
+          gh release create "$TAG" office-workflow-zh-tw.zip \
+            --target "$GITHUB_SHA" \
+            --title "office-workflow-zh-tw $TAG" \
             --notes "${notes:-See CHANGELOG.md}"
