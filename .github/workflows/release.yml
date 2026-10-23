@@ -1,0 +1,36 @@
+# Push a tag like v0.6.2 to publish a GitHub Release with the skill zip.
+# The zip keeps a stable name so README links to releases/latest/download/ keep working.
+name: Release skill zip
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md version matches the tag
+        run: |
+          version=$(sed -n 's/^  version: //p' office-workflow-zh-tw/SKILL.md)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "SKILL.md says $version but the tag is $GITHUB_REF_NAME"
+            exit 1
+          fi
+
+      - name: Build zip
+        run: zip -r office-workflow-zh-tw.zip office-workflow-zh-tw -x '*.DS_Store'
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notes=$(awk -v v="${GITHUB_REF_NAME#v}" '$0 ~ "^## \\[" v "\\]" {f=1; next} /^## \[/ {f=0} f' office-workflow-zh-tw/CHANGELOG.md)
+          gh release create "$GITHUB_REF_NAME" office-workflow-zh-tw.zip \
+            --title "office-workflow-zh-tw $GITHUB_REF_NAME" \
+            --notes "${notes:-See CHANGELOG.md}"

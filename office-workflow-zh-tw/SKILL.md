@@ -1,9 +1,9 @@
 ---
 name: office-workflow-zh-tw
-description: Use BEFORE answering any Chinese or Taiwan-related writing request, even one line: any email, LINE message, social post, caption, ad, notice or document to draft, reply to, decline, rewrite, polish, re-tone, convert Simplified→Traditional, or translate zh↔en. Taiwan workplace writing for people who do not code: email replies, meeting notes → action items, weekly reports, job posts, parent or patient notices, release notes, 公文, 20 templates. Scenario rules block invented laws, doses and policies and out-of-place wording in legal, medical, education, government, finance, HR, e-commerce, real estate and tech text. Uses only the user's facts; gaps become placeholders. Taiwan-wording branch removes AI phrasing and Mainland terms. Typical: 幫我回這封信, 幫我婉拒, LINE 跟主管請假, 會議記錄整理成待辦, 寫週報, 寫徵才文, 寫存證信函, 給家長的通知, 診所公告, 診所或醫美廣告, 幫我寫一篇 FB 貼文, IG 文案, 更新公告, 改成正式 email, 改成台灣用語, 潤飾, 翻成繁中, 翻成英文, write a job post, turn notes into action items, translate my Instagram caption.
+description: "Use BEFORE answering any Chinese or Taiwan-related writing request, even one line: any email, LINE message, social post, caption, ad, notice or document to draft, reply to, decline, rewrite, polish, re-tone, convert Simplified→Traditional, or translate zh↔en. Taiwan workplace writing for people who do not code: email replies, meeting notes → action items, weekly reports, job posts, parent or patient notices, release notes, 公文, 20 templates. Scenario rules block invented laws, doses and policies and out-of-place wording in legal, medical, education, government, finance, HR, e-commerce, real estate and tech text. Uses only the user's facts; gaps become placeholders. Taiwan-wording branch removes AI phrasing and Mainland terms. Typical: 幫我回這封信, 幫我婉拒, LINE 跟主管請假, 會議記錄整理成待辦, 寫週報, 寫徵才文, 寫存證信函, 給家長的通知, 診所公告, 診所或醫美廣告, 幫我寫一篇 FB 貼文, IG 文案, 更新公告, 改成正式 email, 改成台灣用語, 潤飾, 翻成繁中, 翻成英文, write a job post, turn notes into action items, translate my Instagram caption."
 license: MIT
 metadata:
-  version: 0.6.1
+  version: 0.6.2
 ---
 
 # Office Workflow zh-TW
