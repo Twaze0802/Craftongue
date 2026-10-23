@@ -2,23 +2,23 @@
 
 **[繁體中文說明](README.zh-TW.md)**
 
-An Agent Skill for people who work in Taiwan offices and don't write code. Works with any AI tool that supports the open [Agent Skills](https://agentskills.io) format, such as Claude Code, claude.ai, Codex, and Cursor.
+An Agent Skill for people who write workplace text in Traditional Chinese and don't write code. Works with any AI tool that supports the open [Agent Skills](https://agentskills.io) format, such as Claude Code, claude.ai, Codex, and Cursor.
 
 ## What it does
 
 **Main jobs**
-- **Reply to emails** in natural Taiwan business tone, answering every question in the original email.
+- **Reply to emails** in a natural business tone, answering every question in the original email.
 - **Meeting notes → action items**: a table of task, owner, deadline, and notes. Missing owners or dates are marked 待確認, never guessed.
 - **Rough notes → weekly report**: done this week, in progress, blockers, next week.
 
-**Taiwan-wording branch**
-- Rewrites, polishes, or translates any text into natural Taiwanese Traditional Chinese (or into English): removes stiff "AI-sounding" phrasing, replaces Mainland vocabulary and slang, applies Taiwan punctuation, and keeps one consistent tone (formal, business, or casual chat).
+**Traditional Chinese wording branch**
+- Rewrites, polishes, or translates any text into natural Traditional Chinese (or into English): removes stiff "AI-sounding" phrasing, replaces Simplified-Chinese vocabulary and slang, applies Traditional Chinese punctuation, and keeps one consistent tone (formal, business, or casual chat).
 
 **Never makes things up.** It uses only what you paste or tell it. Anything missing becomes a placeholder like 【請填入：出貨日期】 for you to fill in.
 
-**Templates.** 20 Taiwan workplace templates (leave requests, quotes, payment reminders, delay notices, complaint replies, handover, parent notices, closure notices, and more).
+**Templates.** 20 workplace templates (leave requests, quotes, payment reminders, delay notices, complaint replies, handover, parent notices, closure notices, and more).
 
-**Scenario rules.** Nine fields (legal, medical, education, government 公文, finance and insurance, real estate, e-commerce support, HR, tech) each get Taiwan terms, a standard structure, and a **Never** list: no law article numbers, doses, rates, or citations from memory; no legal or medical judgment; no personal data in group messages; no discriminatory job-post conditions; no emoji or hype where they do not belong.
+**Scenario rules.** Nine fields (legal, medical, education, government 公文, finance and insurance, real estate, e-commerce support, HR, tech) each get local terms, a standard structure, and a **Never** list: no law article numbers, doses, rates, or citations from memory; no legal or medical judgment; no personal data in group messages; no discriminatory job-post conditions; no emoji or hype where they do not belong.
 
 ## Install
 
@@ -38,7 +38,7 @@ Fill in `my-profile.md` (name, title, company, signature, register, banned words
 
 > 幫我寫這週的週報：……
 
-> Rewrite this for Taiwanese readers: ……
+> Rewrite this in natural Traditional Chinese: ……
 
 ## Model compatibility
 
