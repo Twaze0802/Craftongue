@@ -72,13 +72,87 @@ npx skills add Twaze0802/Craftongue
 
 ## English
 
-**office-workflow-zh-tw** is an [Agent Skill](https://agentskills.io) for anyone writing workplace text in Traditional Chinese: email replies, meeting notes to action items, weekly reports, job posts, notices to parents or patients, 公文, and translation between English and Traditional Chinese. It removes Simplified-Chinese wording and AI phrasing, and never invents facts, laws or doses: gaps become placeholders.
+### What it is
 
-- **Install on claude.ai:** download the [zip](https://github.com/Twaze0802/Craftongue/releases/latest/download/office-workflow-zh-tw.zip) and upload it under Settings → Capabilities → Skills.
-- **Install for Claude Code, Codex, Cursor and other Agent Skills tools:** `npx skills add Twaze0802/Craftongue`
-- Instructions can be written in English; the explanation comes back in English.
+**office-workflow-zh-tw** is a free, open-source [Agent Skill](https://agentskills.io) that makes AI assistants write workplace text the way a native Traditional Chinese speaker would. It is built for people who don't code: office staff, teachers, clinic and shop owners, and anyone who writes emails, notices or reports in Traditional Chinese, or translates between English and Traditional Chinese.
 
-See the [skill's English README](office-workflow-zh-tw/README.md) for details.
+Without it, AI output in Traditional Chinese often reads like a machine translation of Simplified Chinese: wrong vocabulary (項目 for "project", 服務器 for "server", 聯繫 for "contact"), stiff "AI-sounding" phrases, mixed punctuation, and facts the user never gave. This skill fixes those problems.
+
+### Before and after
+
+The example at the top of this page, explained:
+
+| | Before | After |
+|---|---|---|
+| Vocabulary | 項目, 服務器, 聯繫 (Simplified-Chinese usage) | 專案, 伺服器, 聯絡 (standard Traditional Chinese usage) |
+| Tone | Stiff, formulaic apology | Polite, natural business tone (再麻煩您, 歡迎隨時與我聯絡) |
+| Layout | One block of text | Three short paragraphs, one point each, easy to read on a phone |
+| Facts | Oct 25 → Oct 28, attachment, server upgrade | Exactly the same: nothing added, nothing dropped |
+
+### What it does
+
+- **Email replies:** answers every question in the original email in a natural business tone, and keeps your decision (accept, decline, delay) as you stated it.
+- **Meeting notes → action items:** a table of task, owner, deadline and notes. Missing owners or dates are marked 待確認 (to be confirmed), never guessed.
+- **Weekly reports:** turns scattered notes into done / in progress / issues and help needed / next week.
+- **20 templates:** leave requests, quotes, payment reminders, shipping delays, complaint replies, handover notes, notices to parents, clinic closure notices and more.
+- **Rules for 9 professional fields:** legal, medical, education, government letters (公文), finance and insurance, real estate, e-commerce support, HR and tech. Each field has its own terms, standard structure and a "never" list: no invented law articles, drug doses, interest rates or citations; no legal or medical judgments; no personal data in group messages; no discriminatory job-post conditions; no price promotions or before/after claims in clinic ads.
+- **Wording branch:** rewrites, polishes or translates any text into natural Traditional Chinese (or English). It converts Simplified to Traditional, replaces Simplified-Chinese vocabulary, removes AI phrasing, fixes punctuation and keeps one consistent tone: formal, business or casual.
+- **No invented facts:** it uses only what you paste or tell it. Gaps become placeholders such as 【請填入：出貨日期】 ("fill in: shipping date") for you to complete.
+
+### Install
+
+**claude.ai (no coding needed)**
+1. Download [office-workflow-zh-tw.zip](https://github.com/Twaze0802/Craftongue/releases/latest/download/office-workflow-zh-tw.zip).
+2. Go to Settings → Capabilities → Skills and upload the zip.
+3. Ask for what you need. The skill loads on its own when the request is about Chinese writing.
+
+**Claude Code, Codex, Cursor and other tools that support Agent Skills**
+
+```bash
+npx skills add Twaze0802/Craftongue
+```
+
+Or copy the [`office-workflow-zh-tw/`](office-workflow-zh-tw/) folder into `~/.claude/skills/` (or your tool's skills folder).
+
+### Optional: your profile
+
+Fill in your name, title, company, signature and preferred tone once, and every draft uses them instead of placeholders. Either paste a line starting with 【我的設定】 into your AI tool's personal preferences, or edit [`my-profile.md`](office-workflow-zh-tw/my-profile.md) before uploading. See the [skill README](office-workflow-zh-tw/README.md) for the format.
+
+### Example requests
+
+You can write instructions in English. The draft is in Chinese when you ask for Chinese, and the notes about what changed come back in English.
+
+> Reply to this email in Traditional Chinese. I want to accept, but delivery moves to Nov 20: ……
+
+> Turn these meeting notes into an action-item table: ……
+
+> Write this week's report from my notes: ……
+
+> Translate my Instagram caption into natural Traditional Chinese: ……
+
+> Rewrite this notice for parents so it sounds natural and polite: ……
+
+### Test results
+
+We tested on 50 new tasks that were never used during development. A separate AI grader, blind to which version wrote each answer, checked whether every requirement of the task was met:
+
+| Model | Without the skill | With the skill |
+|---|---|---|
+| Haiku | 18% | 48% |
+| Sonnet | 18% | 66% |
+| Opus (19-task sample) | 32% | 84% |
+
+With Sonnet, answers with no serious error (an invented fact, a wrong decision made for the user, a broken format) rose from 30% to 78%. Each task ran once and the grader is an AI, so treat these numbers as a guide, not a guarantee. Works best with Sonnet and Opus. Haiku sometimes doesn't load the skill on its own; naming the task clearly ("reply to this email", "turn these notes into to-dos") helps.
+
+### Safety and privacy
+
+- No code, no network calls, no API keys: only text instructions and word lists.
+- Your text is processed only by the AI tool you already use. This skill sends nothing anywhere.
+- To report a problem privately, see [SECURITY.md](SECURITY.md).
+
+### Feedback
+
+If something reads wrong, please open an [issue](https://github.com/Twaze0802/Craftongue/issues) with the input, the output and what you expected. Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). If the skill helps you, a ⭐ star helps others find it.
 
 ## Website / 網站
 
