@@ -2,6 +2,11 @@
 
 All notable changes to this skill (formerly `taiwan-natural-writing`) are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.6.2] - 2026-10-23
+
+### Fixed
+- The `description` in SKILL.md is now quoted. It held an unquoted colon, so strict YAML parsers (used by skill directories and installers) rejected the file, even though claude.ai accepted it.
+
 ## [0.6.1] - 2026-10-21
 
 ### Fixed

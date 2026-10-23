@@ -1,34 +1,92 @@
 # Craftongue 匠語
 
-Bilingual (English / Traditional Chinese) Agent Skills that help AI tools do specific jobs well.
-中英雙語的 AI 技能（Agent Skills），讓 AI 更會做特定工作。
+**讓 AI 寫出像台灣人寫的職場文字。** 免費、開源的 AI 技能（Agent Skill），專門處理繁體中文的 email 回覆、會議記錄轉待辦、週報、公文、給家長或病患的通知，並把中國用語和 AI 腔改成自然的台灣用語。
 
-## Skills / 技能
+**Free, open-source Agent Skill for Taiwan workplace writing in Traditional Chinese:** email replies, meeting notes to action items, weekly reports, 公文 (government letters), and Mainland-to-Taiwan wording fixes. [English details below](#english).
 
-| Skill | What it does | 功能 | Status |
-|---|---|---|---|
-| [office-workflow-zh-tw](office-workflow-zh-tw/) | Workplace writing for Taiwan offices (email replies, meeting to-dos, weekly reports) with a Taiwan-wording branch | 台灣職場寫作：回 email、會議轉待辦、週報，內含台灣用語分支 | v0.6.1 |
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Version](https://img.shields.io/badge/version-0.6.2-blue.svg)
+![Format: Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-orange.svg)
 
-Skills follow the open [Agent Skills](https://agentskills.io) format and work with Claude Code, claude.ai, Codex, Cursor and other compatible tools.
-技能採用開放的 Agent Skills 格式，可用於 Claude Code、claude.ai、Codex、Cursor 等工具。
+## 改寫前後
+
+> **改寫前（AI 常見的寫法）**
+> 關於上週我們溝通的項目，現將相關文件發給您，請查收。由於我方服務器升級，原定於10月25日的上線時間需延後至10月28日。給您帶來的不便深表歉意。如有任何問題，請隨時聯繫我。
+
+> **改寫後**
+> 關於上週討論的專案，相關文件已附在信中，再麻煩您查收。
+>
+> 因為我們的伺服器正在升級，原定 10 月 25 日的上線時間需要延後到 10 月 28 日，造成您的不便，非常抱歉。
+>
+> 如果有任何問題，歡迎隨時與我聯絡，謝謝您。
+
+項目→專案、服務器→伺服器、聯繫→聯絡，日期和事實一個都沒改。更多例子在 [`examples/`](office-workflow-zh-tw/examples/)。
+
+## 三步驟安裝
+
+**claude.ai（不用寫程式）**
+1. 下載 [office-workflow-zh-tw.zip](https://github.com/Twaze0802/Craftongue/releases/latest/download/office-workflow-zh-tw.zip)。
+2. 到「設定 → 功能 → 技能」上傳 zip。
+3. 直接說「幫我回這封信：……」就會用到。
+
+**Claude Code、Codex、Cursor 等支援 Agent Skills 的工具**
+
+```bash
+npx skills add Twaze0802/Craftongue
+```
+
+也可以把 [`office-workflow-zh-tw/`](office-workflow-zh-tw/) 資料夾複製到 `~/.claude/skills/`。
+
+## 它會做什麼
+
+- **回 email：** 用台灣商務語氣回信，原信的每個問題都會回到。
+- **會議記錄轉待辦：** 整理成「待辦事項／負責人／期限」表格，沒寫到的標「待確認」，不亂猜。
+- **週報：** 零散筆記整理成「本週完成／進行中／問題／下週計畫」。
+- **20 種範本：** 請假信、報價、付款提醒、出貨延遲、客訴回覆、離職交接、家長通知、停診公告等。
+- **9 種專業場景規則：** 法律、醫療、教育、公文、金融保險、房地產、電商、人資、科技。不自己編法條、藥量或利率，醫美廣告不寫優惠和術前術後對比。
+- **台灣用語分支：** 簡轉繁、去 AI 腔、換掉中國用語、統一台灣標點。
+
+**只用你給的資訊。** 缺的地方會留下【請填入：出貨日期】讓你自己補。
+
+## 測試結果
+
+50 題沒在開發時用過的新題目，由另一個 AI 盲評「全部項目通過」的比例：
+
+| 模型 | 不裝技能 | 裝這個技能 |
+|---|---|---|
+| Haiku | 18% | 48% |
+| Sonnet | 18% | 66% |
+| Opus（抽 19 題） | 32% | 84% |
+
+每題只跑一次、評分者是 AI，數字僅供參考。
+
+## 安全
+
+沒有程式、不連網路、不需要 API 金鑰，只有文字指令和詞彙表。發現問題請看 [SECURITY.md](SECURITY.md)。
+
+## 喜歡的話
+
+按右上角的 ⭐ Star，讓更多台灣上班族找得到。用起來哪裡怪怪的，歡迎開 [Issue](https://github.com/Twaze0802/Craftongue/issues) 告訴我們，貢獻方式見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+---
+
+## English
+
+**office-workflow-zh-tw** is an [Agent Skill](https://agentskills.io) for anyone writing workplace text in Traditional Chinese for Taiwan: email replies, meeting notes to action items, weekly reports, job posts, notices to parents or patients, 公文, and translation between English and Taiwanese Mandarin. It removes Mainland terms and AI phrasing, and never invents facts, laws or doses: gaps become placeholders.
+
+- **Install on claude.ai:** download the [zip](https://github.com/Twaze0802/Craftongue/releases/latest/download/office-workflow-zh-tw.zip) and upload it under Settings → Capabilities → Skills.
+- **Install for Claude Code, Codex, Cursor and other Agent Skills tools:** `npx skills add Twaze0802/Craftongue`
+- Instructions can be written in English; the explanation comes back in English.
+
+See the [skill's English README](office-workflow-zh-tw/README.md) for details.
 
 ## Website / 網站
 
-The bilingual website lives in [`site/`](site/) (Astro). See [site/README.md](site/README.md).
-雙語網站在 [`site/`](site/)（Astro），說明見 [site/README.md](site/README.md)。
-
-## Safety / 安全
-
-No hidden behavior, no network calls, no API keys required. Every script (if any) is documented.
-沒有隱藏行為、不連外部網路、不需要 API 金鑰。若有程式，每一個都會說明用途。
+The bilingual website lives in [`site/`](site/) (Astro). 雙語網站原始碼在 [`site/`](site/)。
 
 ## License / 授權
 
-[MIT](LICENSE). Each skill folder also carries its own copy of the license.
-採用 [MIT](LICENSE) 授權，每個技能資料夾內也附一份。
-
-Security and contributing: see [SECURITY.md](SECURITY.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
-安全與貢獻方式請見 [SECURITY.md](SECURITY.md) 和 [CONTRIBUTING.md](CONTRIBUTING.md)。
+[MIT](LICENSE). Each skill folder also carries its own copy of the license. 採用 MIT 授權。
 
 ## Trademarks / 商標
 
